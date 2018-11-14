@@ -1,11 +1,4 @@
-<!--
-
-	En clases hemos visto dos métodos (funciones) de jQuery que nos han ayudado
-	a insertar código html en el lugar correcto: append y prepend.
-	En este ejercicio trabajaremos con ambos y además descubriremos dos nuevos
-	métodos que son similares pero tienen resultados distintos: before y after.
-	Primero que nada te entregaré los links para revisar la documentación:
-		- http://api.jquery.com/before/
+/*- http://api.jquery.com/before/
 		- http://api.jquery.com/after/
 
 	1. Seleccionar el cuarto li y por medio de un append
@@ -33,35 +26,29 @@
 	correspodientes selecciones de elementos del DOM que utilizarás en el ejercicio,
 	no solo evitarás tener que seleccionar el sexto li como si fuera el séptimo hijo,
 	si no que también estarás mejorando tu código y haciendo que funcione más rápido,
-	porque el navegador no deberá recorrer constantemente el DOM para encontrar los elementos.
+	porque el navegador no deberá recorrer constantemente el DOM para encontrar los elementos.*/
 
--->
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="utf-8">
-	<title>Ejercicio 03</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-<body>
+$(document).ready(function(){
 
-	<nav class="navbar">
-		<ul>
-			<li><a href="#">link 1</a></li>
-			<li><a href="#">link 2</a></li>
-			<li><a href="#">link 3</a></li>
+	var li4 = $('ul li:nth-child(4)')
+		li4.append('<ul><li><a href="#">link 4.a</a></li></ul>');
+		li4.before('<li><a href="#">link 3.5</a></li>');
 
-			<li><a href="#">link 4</a></li>
-			<li><a href="#">link 5</a></li>
-			<li><a href="#">link 6</a></li>
+	var li6 = $('ul li:nth-child(6)')
+		li6.prepend('😎 ');
+		li6.after('🙂');
 
-			<li><a href="#">link 7</a></li>
-			<li><a href="#">link 8</a></li>
-			<li><a href="#">link 9</a></li>
-		</ul>
-	</nav>
+	/*$('ul li:nth-child(4)')
+		.append('<ul><li><a href="#">link 4.a</a></li></ul>');
 
-	<script src="../_assets/js/jquery-3.3.1.min.js"></script>
-	<script src="index.js"></script>
-</body>
-</html>
+	$('ul li:nth-child(4)')	
+		.before('<li><a href="#">link 3.5</a></li>');*/
+	
+    /*$('ul li:nth-child(6)')
+    	.prepend('😎 ');
+
+    $('ul li:nth-child(6)')	
+    	.after('🙂');*/
+
+})

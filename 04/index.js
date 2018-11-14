@@ -1,6 +1,4 @@
-<!--
-
-  Para comenzar a practicar con la delegación de eventos, lo que haremos será crear
+/*Para comenzar a practicar con la delegación de eventos, lo que haremos será crear
   una lista de nombres donde se le pedirá al usuario que ingrese un nombre y
   además tendrá la posibilidad de eliminar alguno cuando lo requiera.
 
@@ -26,24 +24,34 @@
   para el usuario. Esta función retorna un valor que puede ser almacenado en una variable y,
   posteriormente, puede ser utilizado en cualquier otro lugar.
   Por favor, toma como ejemplo éste código:
-  var data = prompt('Por favor agrega un nombre a la lista', 'Harry Potter');
+  var data = prompt('Por favor agrega un nombre a la lista', 'Harry Potter');*/
 
--->
+  $(document).ready(function(){
+  	$('.add_name').on('click', function(){
+  		var listName = prompt('Por favor, agrega un nombre a la lista', 'Nombre - Apellido');
+  		//return listName;
+  		//console.log(listName)
+
+  	$('.names').append('<li><a class="remove_name" href="#"><span>'+ listName +'</span></a></li>');
+
+  	$('ul').on('click', 'li', function(e){
+  		e.preventDefault();
+  		});
 
 
+//este último está pendiente
+  	$('ul').children('li')
+  		   .find('.remove_name')
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-	<title>Ejercicio 04</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <button class="add_name">+</button>
-  <ul class="names"></ul>
 
-  <script src="../_assets/js/jquery-3.3.1.min.js"></script>
-  <script src="index.js"></script>
-</body>
-</html>
+  	
+  		$(this).on('click', function(){
+  			.remove('li')
+  		})
+  			
+
+
+  	});
+
+
+  }); //fin documentready
