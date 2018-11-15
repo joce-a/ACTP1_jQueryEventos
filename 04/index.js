@@ -27,6 +27,7 @@
   var data = prompt('Por favor agrega un nombre a la lista', 'Harry Potter');*/
 
   $(document).ready(function(){
+
   	$('.add_name').on('click', function(){
   		var listName = prompt('Por favor, agrega un nombre a la lista', 'Nombre - Apellido');
   		//return listName;
@@ -34,24 +35,14 @@
 
   	$('.names').append('<li><a class="remove_name" href="#"><span>'+ listName +'</span></a></li>');
 
-  	$('ul').on('click', 'li', function(e){
-  		e.preventDefault();
+  	$('.names').on('click', '.remove_name', function(e){
+      e.preventDefault();
   		});
+  
+  	$('.names').on('click', '.remove_name', function(){
+      $(this).parent().remove()
+    })		
 
+  	}); //.add_name
 
-//este último está pendiente
-  	$('ul').children('li')
-  		   .find('.remove_name')
-
-
-  	
-  		$(this).on('click', function(){
-  			.remove('li')
-  		})
-  			
-
-
-  	});
-
-
-  }); //fin documentready
+  }); //.(document).ready
